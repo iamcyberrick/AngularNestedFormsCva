@@ -8,16 +8,25 @@ import { FormGroup, FormControl} from "@angular/forms";
 })
 export class BillingInfoComponent implements OnInit {
 
-public nestedForm: FormGroup = new FormGroup({
+/** 
+ * Nested forms parent
+ */
+public nestedFormsParent: FormGroup = new FormGroup({
   basicInfo: new FormControl(""),
   address: new FormControl("")
 });
+
+
+formChangesSub: any;
   constructor() { }
 
   ngOnInit() {
+    this.formChangesSub = this.nestedFormsParent.valueChanges.subscribe((x) => {
+      console.log("Inside the valueChanges subscription", x);
+    });
   }
 
 public onSubmit(){
-  console.log("Val", this.nestedForm.value);
+  console.log("Val", this.nestedFormsParent.value);
 }
 }

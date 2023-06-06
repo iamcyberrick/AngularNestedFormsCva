@@ -1,3 +1,3 @@
-# angular-nested-forms-cva
+# AngularNestedFormsCva
 
 [Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-nested-forms-cva)
